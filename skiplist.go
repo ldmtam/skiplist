@@ -209,6 +209,10 @@ func (t *SkipList) Find(e ListElement) (elem *SkipListElement, ok bool) {
 	return
 }
 
+func (t *SkipList) FindByKey(key float64) (elem *SkipListElement, ok bool) {
+	return t.findExtended(key, false)	
+}
+
 // FindGreaterOrEqual finds the first element, that is greater or equal to the given ListElement e.
 // The comparison is done on the keys (So on ExtractKey()).
 // FindGreaterOrEqual runs in approx. O(log(n))
